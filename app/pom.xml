@@ -38,6 +38,21 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
+		<!--twilio.sdk		-->
+
+		<dependency>
+			<groupId>com.twilio.sdk</groupId>
+			<artifactId>twilio</artifactId>
+			<version>8.34.0</version> <!-- Use the latest version -->
+		</dependency>
+		<dependency>
+			<groupId>jakarta.annotation</groupId>
+			<artifactId>jakarta.annotation-api</artifactId>
+			<version>2.1.1</version> <!-- Use the latest version -->
+		</dependency>
+
+
+
 
 		<!-- PostgreSQL Driver -->
 		<dependency>

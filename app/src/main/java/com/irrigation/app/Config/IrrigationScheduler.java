@@ -13,7 +13,8 @@ public class IrrigationScheduler {
         this.producerService = producerService;
     }
 
-    @Scheduled(cron = "0 0 * * * ?") // Every hour
+    @Scheduled(cron = "0 * * * * ?") // Every minute
+
     public void scheduleIrrigationRequests() {
         producerService.sendIrrigationRequests();
     }

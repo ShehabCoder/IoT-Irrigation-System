@@ -44,6 +44,7 @@ import com.irrigation.app.DTOs.TimeSlotDTO;
 import com.irrigation.app.Entities.Plot;
 import com.irrigation.app.Entities.TimeSlot;
 import com.irrigation.app.Repositories.PlotRepository;
+import com.irrigation.app.Repositories.TimeSlotRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalTime;
@@ -55,9 +56,12 @@ import java.util.stream.Collectors;
 public class PlotService {
 
     private final PlotRepository plotRepository;
+    private  final TimeSlotRepository timeSlotRepository;
 
-    public PlotService(PlotRepository plotRepository) {
+
+    public PlotService(PlotRepository plotRepository,TimeSlotRepository timeSlotRepository) {
         this.plotRepository = plotRepository;
+        this.timeSlotRepository = timeSlotRepository;
     }
 
     public PlotDTO addPlot(PlotDTO plotDTO) {
@@ -93,6 +97,11 @@ public class PlotService {
                 .orElseThrow(() -> new RuntimeException("Plot not found"));
 
         return mapToDTO(plot);
+    }
+    public void updateTimeSlotStatus(Long plotId, boolean status) {
+        // Update the status of all time slots associated with the given plot ID
+        timeSlotRepository.updateStatusByPlotId(plotId, status);
+        System.out.println("Updated time slot status for Plot ID: " + plotId + " to: " + status);
     }
 
     public PlotDTO configurePlot(Long plotId, List<TimeSlotDTO> timeSlotDTOs) {
