@@ -59,3 +59,12 @@ This project is licensed under the MIT License.
 - Spring Boot
 - Apache Kafka
 - PostgreSQL
+
+
+## New Features
+
+- **Push Protection**: Implemented GitHub push protection to prevent secrets from being pushed to the repository. This includes scanning for sensitive information such as Twilio Account String Identifiers and blocking the push if any secrets are detected.
+- **Sensor Simulation**: Added a sensor simulation feature to simulate the behavior of sensors in the irrigation system. This includes a 70% chance of success and a 30% chance of failure for sensor interactions.
+- **Kafka Integration**: Enhanced Kafka integration for better communication between different services. This includes setting up Kafka producers and consumers for handling irrigation requests and responses.
+- **Logging**: Configured logging to provide detailed information about the system's operations, including sensor interactions and Kafka message processing.
+
