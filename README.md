@@ -12,13 +12,15 @@ The system utilizes three Kafka topics for communication:
 The system sends alerts through both Kafka and WhatsApp when issues are detected. Here's an example of the alert flow:
 
 1. Kafka Alert Message:
-![Kafka Alert Example](![alt text](image-1.png))
+![Kafka Alert Example](![image](https://github.com/user-attachments/assets/6a9f7a8b-f5f3-4c69-b83d-7597af450d3f)
+)
 ```json
 {"plot_id": 3, "status": "failure", "message": "Sensor failed to irrigate the plot."}
 ```
 
 2. WhatsApp Alert Notifications:
-![WhatsApp Alert Example](![alt text](image.png))
+![WhatsApp Alert Example](![image](https://github.com/user-attachments/assets/4dcbec5c-c971-463e-8a58-60abe05bcc3e)
+)
 
 These alerts are sent in real-time and can be monitored through both the Kafka topic and WhatsApp interface, ensuring immediate notification of any irrigation system issues.
 
